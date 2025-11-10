@@ -1,0 +1,30 @@
+body {
+  font-family: Arial;
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+input,
+select,
+button {
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: none;
+}
+button {
+  background: #00bfa6;
+  color: white;
+  cursor: pointer;
+}
