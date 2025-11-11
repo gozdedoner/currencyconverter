@@ -1,30 +1,179 @@
+/* 🌍 GENEL GÖRÜNÜM */
 body {
-  font-family: Arial;
-  background: #111;
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #fff;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 100vh;
+  margin: 0;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
-.container {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 12px;
-  backdrop-filter: blur(8px);
+/* Başlık */
+h1 {
+  font-size: 28px;
+  letter-spacing: 1px;
+  margin-bottom: 50px; /* Başlık ile container arası açıldı */
+  text-align: center;
 }
 
-input,
-select,
-button {
-  margin: 5px;
-  padding: 5px 10px;
-  border-radius: 8px;
+/* ☀️🌙 TEMA BUTONU */
+.theme-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
   border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s ease;
 }
+.theme-btn:hover {
+  transform: scale(1.15);
+}
+
+/* 💎 ANA CONTAINER */
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  padding: 25px 20px;
+  text-align: center;
+  width: 320px;
+  max-width: 85%;
+  transition: all 0.3s ease;
+}
+.container:hover {
+  transform: scale(1.015);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* 💬 INPUT ve SELECT */
+input,
+select {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 10px 14px;
+  width: 100%;
+  max-width: 280px;
+  margin: 10px auto;
+  transition: all 0.3s ease;
+}
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 🌿 SELECT ÖZEL RENKLER */
+select {
+  background: rgba(0, 191, 166, 0.2);
+  color: #fff;
+  border: 1px solid rgba(0, 255, 200, 0.3);
+  outline: none;
+  transition: all 0.3s ease;
+}
+select:focus,
+select:hover {
+  background: rgba(0, 191, 166, 0.4);
+  box-shadow: 0 0 10px rgba(0, 255, 200, 0.5);
+}
+select option {
+  background-color: #0f2c2a;
+  color: #fff;
+}
+
+/* 🌗 LIGHT MODE */
+body.dark-mode {
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  color: #111;
+}
+body.dark-mode .container {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  color: #111;
+}
+body.dark-mode input,
+body.dark-mode select {
+  background: rgba(255, 255, 255, 0.8);
+  color: #111;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+body.dark-mode input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+body.dark-mode button {
+  background: #111;
+  color: #f4f4f4;
+}
+body.dark-mode button:hover {
+  background: #333;
+}
+body.dark-mode select option {
+  background-color: #e0f7ef;
+  color: #111;
+}
+
+/* 🟩 BUTONLAR */
 button {
-  background: #00bfa6;
+  background: linear-gradient(135deg, #00bfa6, #00e0c6);
   color: white;
   cursor: pointer;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  box-shadow: 0 0 10px rgba(0, 191, 166, 0.5);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 280px;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(0, 255, 200, 0.65);
+}
+button:active {
+  transform: scale(0.97);
+}
+
+/* 🔢 SONUÇ YAZISI */
+#result {
+  margin-top: 12px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+#result.visible {
+  opacity: 1;
+}
+
+/* 📱 RESPONSIVE TASARIM */
+@media (max-width: 600px) {
+  body {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+  .container {
+    width: 90%;
+    padding: 20px 16px;
+  }
+  h1 {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+  input,
+  select,
+  button {
+    font-size: 15px;
+  }
 }
